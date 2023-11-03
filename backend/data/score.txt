@@ -1,0 +1,7 @@
+Score
+(0) - Numerous Findings, no evidence of 6S Implementation  
+(1) -  Numerous Findings, evidence that 6S has been started
+(2) - Several Findings, evidence that 6S is being implemented  
+(3) - Few Findings, 6S is nearly implemented
+(4) - Only 1 Finding, 6S implemented
+(5) - No Findings, 6S 100% implemented

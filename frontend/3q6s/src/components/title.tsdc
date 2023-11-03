@@ -1,0 +1,21 @@
+
+const Title = () => {
+    return (
+        <div>
+            <label className='label_header'>Area: 
+            <input key="area-input" className="header-area-input" type="text" 
+                name="area-comment" />
+            </label>
+            <label>Auditors: 
+            <input key="auditors-input" className="header-auditors-input" type="text"
+                name="auditors-comment"/>
+            </label>
+            <label>Date: 
+            <input key="date-input" className="header-date-input" type="date"
+                name="date-comment" />
+            </label>
+        </div>
+    )
+}
+
+export default Title

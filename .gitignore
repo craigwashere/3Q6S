@@ -1,0 +1,8 @@
+/backend/node_modules/*
+/frontend/3q6s/node_modules/*
+/frontend/3q6s/build/*
+/main/build/*
+/main/node_modules/*
+/main/.vscode/*
+*.zip
+*.bak
