@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 const baseURL = 'http://localhost:3001';
-//const baseURL = 'http://3q6s-env-2.eba-dznkfz2a.us-east-2.elasticbeanstalk.com'
 
 const fetchAnswers = async () => {
     try {

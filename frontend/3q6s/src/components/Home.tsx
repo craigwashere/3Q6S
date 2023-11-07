@@ -21,11 +21,9 @@ interface SectionProps {
 }
 
 const SectionDOM: React.FC<SectionProps> = ( {questions, header, index} ) => {
-// console.log("SectionDOM", questions[header as unknown as number])
     return (
         <div key={header}>
             {questions.map((question:QandA, i: number) => {
-            // console.log("q=", question.id+"comment")
             return(
                 <div key={question.id+"div"}>
                 <SelectField key={question.id} label={question.question} 
@@ -46,7 +44,7 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({questions, onSubmit, errorMessage}) => {
-    if (errorMessage != "")
+    if (errorMessage !== "")
         return (
             <div>
             <div>Error communicating with Server</div>
@@ -70,8 +68,6 @@ const Home: React.FC<HomeProps> = ({questions, onSubmit, errorMessage}) => {
                 }}
             >
             {({ isValid, dirty, values, setFieldValue }) => {
-                // console.log("app=>values", values)
-                // console.log("app->sections", Sections2)
                 return (
                     <Form className="form-ui">
                         <div className="header">
@@ -85,7 +81,6 @@ const Home: React.FC<HomeProps> = ({questions, onSubmit, errorMessage}) => {
                         {(Object.keys(values.questions).length !== 0) && 
                             <FieldArray name="questions">
                             {() => questions.map((section: Section, index: number) => {
-                                // console.log("values.questions", values.questions[key as unknown as number])
                                 return (
                                     <fieldset key={section.header}>
                                         <h2>{section.header}</h2>

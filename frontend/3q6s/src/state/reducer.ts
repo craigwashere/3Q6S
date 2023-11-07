@@ -1,4 +1,3 @@
-// import QandAService from '../services/QandAService'
 import { State } from "../state";
 import { QandA, Section } from '../types';
 
@@ -27,12 +26,6 @@ export const reducer = (state: State, action: Action): State => {
     switch (action.type)
     {
         case 'CHANGE_RATING': return state;
-        // changedQuestion = { ...qToChange, rating: action.data.rating}
-        //                       new_state = state.map(q => q.id !== id ? q : changedQuestion)
-        //                       break;
-        // case 'ADD_COMMENT': changedQuestion = { ...qToChange, rating: action.data.comment}
-        //                     new_state = state.map(q => q.id !== id ? q : changedQuestion)
-        //                     break;
         case 'INIT': new_state =  {
             ...state,
             Sections: {
@@ -53,19 +46,9 @@ export const changeRating = (id: string, rating: string): Action => {
         type: "CHANGE_RATING",
         payload: {id: id, rating: rating}
     }
-//     return ((dispatch) => {
-//         dispatch({
-//         type: 'CHANGE_RATING',
-//         data: {id, rating}
-//     })})
 }
 
-export const addComment = (id: string, comment: string) => {
-//     return {
-//         type: 'ADD_COMMENT',
-//         data: {id, comment}
-//     }
-}
+export const addComment = (id: string, comment: string) => { }
 
 export const initialzeQsandAs = (QsandAs: Section[]): Action => {
     console.log("initialzeQsandAs")
@@ -73,24 +56,4 @@ export const initialzeQsandAs = (QsandAs: Section[]): Action => {
         type: "INIT",
         payload: QsandAs
     }
-    // return async dispatch => {
-    //     const sections = await QandAService.getQuestions()
-    //     console.log("sections", sections)
-    //     QsandAs = []
-    //     await sections.forEach(section => {
-    //         QsandAs.push({'header': section.header,
-    //             'questions': section.questions.map((question, i) => {
-    //                 return {'id': section.header+i, 'question': question,
-    //                         'answer': "N/A", 'comment': ""}
-    //             })
-    //         })
-    //     })
-    //     console.log("initialzeQsandAs", QsandAs)
-    //     dispatch({
-    //         type: 'INIT',
-    //         data: QsandAs
-    //     })
-    // }
 }
-
-// export default reducer

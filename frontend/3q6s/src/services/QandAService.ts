@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { valuesInterface } from '../types'
 
-//const baseUrl = 'http://3q6s-env-2.eba-dznkfz2a.us-east-2.elasticbeanstalk.com/questions'
 const baseUrl = 'http://localhost:3001/questions'
 
 const getQuestions = async () => {
@@ -27,4 +26,6 @@ const postAnswers = async (answers: valuesInterface) => {
 	}
 }
 
-export default { getQuestions, postAnswers }
+const QandAService = { getQuestions, postAnswers };
+
+export default QandAService;

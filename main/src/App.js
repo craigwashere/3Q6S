@@ -20,7 +20,7 @@ const Home = ({files, deleteFile}) => {
         {files.map((file, index) => 
           <li key={index}>
             <Link to={`/${file}`}>{file.split(".")[0]}</Link>
-            <a href="#" onClick={() => deleteFile(file)}>
+            <a href="/#" onClick={() => deleteFile(file)}>
               <img className='cancel' src="cancel.png" alt="delete file"/>
             </a>
           </li>)}

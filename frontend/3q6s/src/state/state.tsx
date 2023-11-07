@@ -4,12 +4,10 @@ import { Title, Section } from "../types";
 import { Action } from "./reducer";
 
 export type State = {
-	// Title: Title;
 	Sections: Section[];
 };
 
 const initialState: State = {
-	// Title: {   area: "", auditor: "", date: new Date()},
 	Sections: []
 };
 

@@ -14,13 +14,13 @@ const App: React.FC = () => {
   const navigate = useNavigate()
   const [errorMessage, setErrorMessage] = useState<string>("")
 
-  let tempSections:Sections = {};
-
+  
   React.useEffect(() => {
     document.title = '3Q6S Survey';
   }, []);
-
+  
   React.useEffect(() => {
+    let tempSections:Sections = {};
     console.log("useEffect")
     const fetchQuestions = async () => {
       var QsandAs: Array<Section> = [];
@@ -28,7 +28,7 @@ const App: React.FC = () => {
       try {
         const response = await QandAService.getQuestions();
         console.log("useEffect->response", response);
-        if (response.status == 200)
+        if (response.status === 200)
           questions = response.data;
         else{
           setErrorMessage(response.text);
@@ -51,12 +51,9 @@ const App: React.FC = () => {
           tempSections[question.header] = QsandAs;
       })
       setSections(QsandAs)
-      // console.log("Questions", QsandAs)
-      // console.log("Sections", Sections)
     }
     fetchQuestions();
   }, [])
-// console.log("app->sections", Sections)
 
   const onSubmit = (values: valuesInterface) => {
     var message:string;
